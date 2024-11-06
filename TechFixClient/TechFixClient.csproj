@@ -71,9 +71,29 @@
   <ItemGroup>
     <Content Include="Admin\addSupplier.aspx" />
     <Content Include="Admin\AdminDashBrod.aspx" />
+    <None Include="Connected Services\LoginServiceReferences\LoginService.wsdl" />
+    <Content Include="Connected Services\LoginServiceReferences\TechFixClient.LoginServiceReferences.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\LoginServiceReference\LoginService.wsdl" />
+    <None Include="Connected Services\LoginServiceReferences\configuration91.svcinfo" />
+    <None Include="Connected Services\LoginServiceReferences\configuration.svcinfo" />
+    <None Include="Connected Services\LoginServiceReferences\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\LoginServiceReference\TechFixClient.LoginServiceReference.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\UserServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\UserServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\LoginServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\LoginServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\LoginServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -94,6 +114,16 @@
     </Compile>
     <Compile Include="Admin\AdminDashBrod.aspx.designer.cs">
       <DependentUpon>AdminDashBrod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\LoginServiceReferences\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\LoginServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\UserServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -129,6 +159,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\LoginServiceReferences\" />
+    <WCFMetadataStorage Include="Connected Services\LoginServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserServiceReference\" />
   </ItemGroup>
   <PropertyGroup>

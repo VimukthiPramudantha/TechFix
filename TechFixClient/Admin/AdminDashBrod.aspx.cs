@@ -31,7 +31,7 @@ namespace TechFixClient.Admin
 
         protected void btnAddSupplier_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddSupplier.aspx"); // Redirect to the Add Supplier page
+            Response.Redirect("addSupplier.aspx"); 
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
