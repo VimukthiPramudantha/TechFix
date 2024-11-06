@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechFixClient", "TechFixClient\TechFixClient.csproj", "{90B9469B-FF09-4FD8-A9DC-70950B4DC427}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908} = {7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechFixServer", "TechFixServer\TechFixServer.csproj", "{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90B9469B-FF09-4FD8-A9DC-70950B4DC427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B9469B-FF09-4FD8-A9DC-70950B4DC427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B9469B-FF09-4FD8-A9DC-70950B4DC427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B9469B-FF09-4FD8-A9DC-70950B4DC427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EDF66CE-6263-432A-ACB5-3338E1A81533}
+	EndGlobalSection
+EndGlobal
