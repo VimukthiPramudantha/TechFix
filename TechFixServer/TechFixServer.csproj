@@ -68,12 +68,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LoginService.asmx" />
+    <Content Include="OrderService.asmx" />
+    <Content Include="ProductService.asmx" />
     <Content Include="UserService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginService.asmx.cs">
       <DependentUpon>LoginService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OrderService.asmx.cs">
+      <DependentUpon>OrderService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProductService.asmx.cs">
+      <DependentUpon>ProductService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

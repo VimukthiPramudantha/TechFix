@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a5f7ea30-e824-45d4-83ff-0a11182e0550" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1816f23b-0640-4c90-9800-4e73e09f73ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://localhost:44391/LoginService.asmx?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost:44391/ProductService.asmx?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LoginService.wsdl" MetadataType="Wsdl" ID="76eef5d9-f91b-4061-b0b0-0a7ae9b99428" SourceId="1" SourceUrl="https://localhost:44391/LoginService.asmx?WSDL" />
+    <MetadataFile FileName="ProductService.wsdl" MetadataType="Wsdl" ID="5ab04b69-19a4-4c14-b614-77308d5478ec" SourceId="1" SourceUrl="https://localhost:44391/ProductService.asmx?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

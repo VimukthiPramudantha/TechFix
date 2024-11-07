@@ -11,17 +11,17 @@ namespace TechFixClient.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Page load logic, if necessary
+            
         }
 
         protected void btnViewProducts_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ViewProducts.aspx"); // Redirect to the View Products page
+            Response.Redirect("ViewProduct.aspx"); 
         }
 
         protected void btnViewOrders_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ViewOrders.aspx"); // Redirect to the View Orders page
+            Response.Redirect("ViewOrders.aspx"); 
         }
 
         protected void btnNewQuotations_Click(object sender, EventArgs e)
