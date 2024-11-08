@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="83d56bd5-e00a-486f-a725-8ffd789d8e76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="b4a9c520-e14b-4dd9-9e88-4967bb1a2e4e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://localhost:44391/OrderService.asmx?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost:44391/QuotationWebService.asmx?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="0db1e30e-76fa-4979-a0ae-fc7bb045c06d" SourceId="1" SourceUrl="https://localhost:44391/OrderService.asmx?WSDL" />
+    <MetadataFile FileName="QuotationWebService.wsdl" MetadataType="Wsdl" ID="2519b9f1-9fae-4958-8edf-ef9e7ee95286" SourceId="1" SourceUrl="https://localhost:44391/QuotationWebService.asmx?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

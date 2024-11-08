@@ -72,12 +72,15 @@
     <Content Include="Admin\addSupplier.aspx" />
     <Content Include="Admin\AdminDashBrod.aspx" />
     <None Include="Connected Services\LoginServiceReference\LoginService.wsdl" />
+    <Content Include="Admin\PlaceQuotation.aspx" />
     <Content Include="Admin\ViewOrders.aspx" />
+    <Content Include="Admin\ViewQuotations.aspx" />
     <Content Include="Connected Services\LoginServiceReference\TechFixClient.LoginServiceReference.LoginResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\OrderServiceReference\OrderService.wsdl" />
     <None Include="Connected Services\ProductServiceReference\ProductService.wsdl" />
+    <None Include="Connected Services\QuotationService\QuotationWebService.wsdl" />
     <None Include="Connected Services\UserServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\UserServiceReference\Reference.svcmap">
@@ -102,6 +105,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\QuotationService\configuration91.svcinfo" />
+    <None Include="Connected Services\QuotationService\configuration.svcinfo" />
+    <None Include="Connected Services\QuotationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Login.aspx" />
     <Content Include="Admin\ViewProduct.aspx" />
     <Content Include="Web.config" />
@@ -121,12 +130,26 @@
     <Compile Include="Admin\AdminDashBrod.aspx.designer.cs">
       <DependentUpon>AdminDashBrod.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\PlaceQuotation.aspx.cs">
+      <DependentUpon>PlaceQuotation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PlaceQuotation.aspx.designer.cs">
+      <DependentUpon>PlaceQuotation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ViewOrders.aspx.cs">
       <DependentUpon>ViewOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\ViewOrders.aspx.designer.cs">
       <DependentUpon>ViewOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewQuotations.aspx.cs">
+      <DependentUpon>ViewQuotations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewQuotations.aspx.designer.cs">
+      <DependentUpon>ViewQuotations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\LoginServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -139,6 +162,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ProductServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\QuotationService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -188,6 +216,7 @@
     <WCFMetadataStorage Include="Connected Services\LoginServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\OrderServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\ProductServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\QuotationService\" />
     <WCFMetadataStorage Include="Connected Services\UserServiceReference\" />
   </ItemGroup>
   <PropertyGroup>

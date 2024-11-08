@@ -20,52 +20,24 @@ namespace TechFixServer
     {
         private string connectionString = "Server=localhost;Database=TechFix;Integrated Security=True;";
 
+        
+
         [WebMethod]
         public DataTable GetOrders()
         {
-            DataTable orderTable = new DataTable();
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                conn.Open();
-                // Adjusted query to fetch data related to order without quantity and product
-                string query = @"SELECT o.orderId, q.quotationId, q.status AS QuotationStatus, u.userId, u.userName, 
-                                c.categoryName, p.productName
-                                FROM [Order] o
-                                JOIN Quotations q ON o.quotationId = q.quotationId
-                                JOIN Product p ON q.productId = p.productId
-                                JOIN Category c ON p.categoryId = c.categoryId
-                                JOIN Users u ON o.userId = u.userId";
+                // Query to fetch order details from the Order table
+                string query = "SELECT orderId, quotationId, userId, status FROM [Order]";
+                SqlCommand cmd = new SqlCommand(query, conn);
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                {
-                    adapter.Fill(orderTable);
-                }
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable ordersTable = new DataTable();
+                adapter.Fill(ordersTable);
+
+                return ordersTable;
             }
-
-            return orderTable;
-        }
-
-        [WebMethod]
-        public bool PlaceOrder(int quotationId, int userId, string status)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                // Insert into Order table with adjusted columns
-                string query = "INSERT INTO [Order] (quotationId, userId, status) VALUES (@QuotationId, @UserId, @Status)";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@QuotationId", quotationId);
-                    cmd.Parameters.AddWithValue("@UserId", userId);
-                    cmd.Parameters.AddWithValue("@Status", status);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-            }
-        }
+        
+    }
     }
 }

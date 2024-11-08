@@ -26,7 +26,7 @@ namespace TechFixClient.Admin
 
         protected void btnNewQuotations_Click(object sender, EventArgs e)
         {
-            Response.Redirect("NewQuotations.aspx"); // Redirect to the New Quotations page
+            Response.Redirect("ViewQuotations.aspx"); 
         }
 
         protected void btnAddSupplier_Click(object sender, EventArgs e)
@@ -36,9 +36,9 @@ namespace TechFixClient.Admin
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            // Clear session or authentication cookie, if applicable
+            
             Session.Clear();
-            Response.Redirect("../Login.aspx"); // Redirect to the Login page
+            Response.Redirect("../Login.aspx"); 
         }
     }
 }

@@ -50,7 +50,7 @@
             
             <asp:Button ID="btnViewProducts" runat="server" Text="View Products" CssClass="dashboard-button" OnClick="btnViewProducts_Click" />
             <asp:Button ID="btnViewOrders" runat="server" Text="View Orders" CssClass="dashboard-button" OnClick="btnViewOrders_Click" />
-            <asp:Button ID="btnNewQuotations" runat="server" Text="New Quotations" CssClass="dashboard-button" OnClick="btnNewQuotations_Click" />
+            <asp:Button ID="btnNewQuotations" runat="server" Text="View Quotations" CssClass="dashboard-button" OnClick="btnNewQuotations_Click" />
             <asp:Button ID="btnAddSupplier" runat="server" Text="Add Supplier" CssClass="dashboard-button" OnClick="btnAddSupplier_Click" />
             <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="dashboard-button" OnClick="btnLogout_Click" />
         </div>

@@ -16,19 +16,19 @@ namespace TechFixClient.OrderServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OrderServiceReference.OrderServiceSoap")]
     public interface OrderServiceSoap {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool Login(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> LoginAsync(string email, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrders", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataTable GetOrders();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrders", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> GetOrdersAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PlaceOrder", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool PlaceOrder(int quotationId, int userId, string status);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PlaceOrder", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> PlaceOrderAsync(int quotationId, int userId, string status);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -58,20 +58,20 @@ namespace TechFixClient.OrderServiceReference {
                 base(binding, remoteAddress) {
         }
         
+        public bool Login(string email, string password) {
+            return base.Channel.Login(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LoginAsync(string email, string password) {
+            return base.Channel.LoginAsync(email, password);
+        }
+        
         public System.Data.DataTable GetOrders() {
             return base.Channel.GetOrders();
         }
         
         public System.Threading.Tasks.Task<System.Data.DataTable> GetOrdersAsync() {
             return base.Channel.GetOrdersAsync();
-        }
-        
-        public bool PlaceOrder(int quotationId, int userId, string status) {
-            return base.Channel.PlaceOrder(quotationId, userId, status);
-        }
-        
-        public System.Threading.Tasks.Task<bool> PlaceOrderAsync(int quotationId, int userId, string status) {
-            return base.Channel.PlaceOrderAsync(quotationId, userId, status);
         }
     }
 }

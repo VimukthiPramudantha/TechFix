@@ -11,7 +11,7 @@ namespace TechFixClient.Admin
 {
 
 
-    public partial class ViewOrders
+    public partial class ViewQuotations
     {
 
         /// <summary>
@@ -24,21 +24,30 @@ namespace TechFixClient.Admin
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// gvOrders control.
+        /// lblProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOrders;
+        protected global::System.Web.UI.WebControls.Label lblProduct;
 
         /// <summary>
-        /// btnPlaceOrder control.
+        /// ddlProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPlaceOrder;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProducts;
+
+        /// <summary>
+        /// gvQuotations control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvQuotations;
     }
 }

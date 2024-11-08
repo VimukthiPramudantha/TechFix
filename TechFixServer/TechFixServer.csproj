@@ -70,6 +70,7 @@
     <Content Include="LoginService.asmx" />
     <Content Include="OrderService.asmx" />
     <Content Include="ProductService.asmx" />
+    <Content Include="QuotationWebService.asmx" />
     <Content Include="UserService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -87,6 +88,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuotationWebService.asmx.cs">
+      <DependentUpon>QuotationWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserService.asmx.cs">
       <DependentUpon>UserService.asmx</DependentUpon>
       <SubType>Component</SubType>
