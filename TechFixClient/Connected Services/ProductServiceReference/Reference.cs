@@ -22,6 +22,20 @@ namespace TechFixClient.ProductServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetProducts", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> GetProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddProduct", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool AddProduct(int categoryId, string productName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddProduct", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> AddProductAsync(int categoryId, string productName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetProductsByCategory", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GetProductsByCategory(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetProductsByCategory", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetProductsByCategoryAsync(int categoryId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -57,6 +71,22 @@ namespace TechFixClient.ProductServiceReference {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> GetProductsAsync() {
             return base.Channel.GetProductsAsync();
+        }
+        
+        public bool AddProduct(int categoryId, string productName) {
+            return base.Channel.AddProduct(categoryId, productName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddProductAsync(int categoryId, string productName) {
+            return base.Channel.AddProductAsync(categoryId, productName);
+        }
+        
+        public System.Data.DataTable GetProductsByCategory(int categoryId) {
+            return base.Channel.GetProductsByCategory(categoryId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetProductsByCategoryAsync(int categoryId) {
+            return base.Channel.GetProductsByCategoryAsync(categoryId);
         }
     }
 }

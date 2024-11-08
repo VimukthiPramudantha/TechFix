@@ -44,5 +44,55 @@ namespace TechFixServer
 
             return productsTable; // Return DataTable
         }
+        [WebMethod]
+        public bool AddProduct(int categoryId, string productName)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO Product (CategoryId, ProductName) VALUES (@CategoryId, @ProductName)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryId", categoryId);
+                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        connection.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0; // Return true if insert was successful
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        public DataTable GetProductsByCategory(int categoryId)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT ProductId, ProductName FROM Product WHERE CategoryId = @CategoryId";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryId", categoryId);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+                dt.TableName = "Products";
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
