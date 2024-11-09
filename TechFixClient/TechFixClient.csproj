@@ -90,6 +90,7 @@
     <None Include="Connected Services\OrderServiceReference\OrderService.wsdl" />
     <None Include="Connected Services\ProductServiceReference\ProductService.wsdl" />
     <None Include="Connected Services\QuotationService\QuotationWebService.wsdl" />
+    <None Include="Connected Services\SupplierServiceReference\SupplierService.wsdl" />
     <None Include="Connected Services\UserServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\UserServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\UserServiceReference\Reference.svcmap">
@@ -120,8 +121,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\SupplierServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\SupplierServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\SupplierServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Login.aspx" />
     <Content Include="Admin\ViewProduct.aspx" />
+    <Content Include="Supplier\CategoryProducts.aspx" />
+    <Content Include="Supplier\SupplierDashboard.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +208,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\SupplierServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\UserServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +233,20 @@
     <Compile Include="Admin\ViewProduct.aspx.designer.cs">
       <DependentUpon>ViewProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Supplier\CategoryProducts.aspx.cs">
+      <DependentUpon>CategoryProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\CategoryProducts.aspx.designer.cs">
+      <DependentUpon>CategoryProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierDashboard.aspx.cs">
+      <DependentUpon>SupplierDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierDashboard.aspx.designer.cs">
+      <DependentUpon>SupplierDashboard.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connected Services\UserServiceReference\TechFixClient.UserServiceReference.AddSupplierResponse.datasource">
@@ -234,9 +262,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Supplier\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
@@ -246,6 +272,7 @@
     <WCFMetadataStorage Include="Connected Services\OrderServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\ProductServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\QuotationService\" />
+    <WCFMetadataStorage Include="Connected Services\SupplierServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\UserServiceReference\" />
   </ItemGroup>
   <PropertyGroup>

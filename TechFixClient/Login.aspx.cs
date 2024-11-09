@@ -30,7 +30,7 @@ namespace TechFixClient
             if (isValidUser)
             {
                 // Redirect to the admin dashboard in the Admin folder on successful login
-                Response.Redirect("~/Admin/AdminDashBrod.aspx");
+                Response.Redirect("~/Supplier/SupplierDashboard.aspx");
             }
 
             {
