@@ -95,6 +95,38 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAllQuotations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllQuotationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RespondToQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="quotationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RespondToQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RespondToQuotationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetQuotationsByProductSoapIn">
@@ -127,6 +159,18 @@
   <wsdl:message name="PlaceQuotationSoapOut">
     <wsdl:part name="parameters" element="tns:PlaceQuotationResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllQuotations" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllQuotationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RespondToQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:RespondToQuotation" />
+  </wsdl:message>
+  <wsdl:message name="RespondToQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:RespondToQuotationResponse" />
+  </wsdl:message>
   <wsdl:portType name="QuotationWebServiceSoap">
     <wsdl:operation name="GetQuotationsByProduct">
       <wsdl:input message="tns:GetQuotationsByProductSoapIn" />
@@ -147,6 +191,14 @@
     <wsdl:operation name="PlaceQuotation">
       <wsdl:input message="tns:PlaceQuotationSoapIn" />
       <wsdl:output message="tns:PlaceQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotations">
+      <wsdl:input message="tns:GetAllQuotationsSoapIn" />
+      <wsdl:output message="tns:GetAllQuotationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RespondToQuotation">
+      <wsdl:input message="tns:RespondToQuotationSoapIn" />
+      <wsdl:output message="tns:RespondToQuotationSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="QuotationWebServiceSoap" type="tns:QuotationWebServiceSoap">
@@ -196,6 +248,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllQuotations">
+      <soap:operation soapAction="http://tempuri.org/GetAllQuotations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RespondToQuotation">
+      <soap:operation soapAction="http://tempuri.org/RespondToQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="QuotationWebServiceSoap12" type="tns:QuotationWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -237,6 +307,24 @@
     </wsdl:operation>
     <wsdl:operation name="PlaceQuotation">
       <soap12:operation soapAction="http://tempuri.org/PlaceQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuotations">
+      <soap12:operation soapAction="http://tempuri.org/GetAllQuotations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RespondToQuotation">
+      <soap12:operation soapAction="http://tempuri.org/RespondToQuotation" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

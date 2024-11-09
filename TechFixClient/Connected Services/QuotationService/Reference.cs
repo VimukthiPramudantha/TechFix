@@ -50,6 +50,20 @@ namespace TechFixClient.QuotationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PlaceQuotation", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> PlaceQuotationAsync(int productId, int categoryId, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllQuotations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GetAllQuotations();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllQuotations", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetAllQuotationsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RespondToQuotation", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string RespondToQuotation(int quotationId, decimal price);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RespondToQuotation", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> RespondToQuotationAsync(int quotationId, decimal price);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -117,6 +131,22 @@ namespace TechFixClient.QuotationService {
         
         public System.Threading.Tasks.Task<bool> PlaceQuotationAsync(int productId, int categoryId, int quantity) {
             return base.Channel.PlaceQuotationAsync(productId, categoryId, quantity);
+        }
+        
+        public System.Data.DataTable GetAllQuotations() {
+            return base.Channel.GetAllQuotations();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetAllQuotationsAsync() {
+            return base.Channel.GetAllQuotationsAsync();
+        }
+        
+        public string RespondToQuotation(int quotationId, decimal price) {
+            return base.Channel.RespondToQuotation(quotationId, price);
+        }
+        
+        public System.Threading.Tasks.Task<string> RespondToQuotationAsync(int quotationId, decimal price) {
+            return base.Channel.RespondToQuotationAsync(quotationId, price);
         }
     }
 }

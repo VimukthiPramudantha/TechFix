@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Configuration;
 
 namespace TechFixServer
 {
@@ -18,6 +19,7 @@ namespace TechFixServer
     // [System.Web.Script.Services.ScriptService]
     public class QuotationWebService : System.Web.Services.WebService
     {
+        
         private readonly string connectionString = "Server=localhost;Database=TechFix;Integrated Security=True;";
 
         [WebMethod]
@@ -103,7 +105,7 @@ namespace TechFixServer
                     }
                 }
 
-                dt.TableName = "Products";
+                dt.TableName = "Product";
                 return dt;
             }
             catch (Exception ex)
@@ -135,6 +137,51 @@ namespace TechFixServer
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+       
+        [WebMethod]
+        public DataTable GetAllQuotations()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+                    SELECT Q.quotationId, P.productName, Q.quantity
+                    FROM Quotations Q
+                    JOIN Product P ON Q.productId = P.productId";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dt = new DataTable("quotations");
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+
+        [WebMethod]
+        public string RespondToQuotation(int quotationId, decimal price)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+                    INSERT INTO QuotationResponse (quotationId, price, response) 
+                    VALUES (@quotationId, @price, 'Accepted')";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@quotationId", quotationId);
+                    cmd.Parameters.AddWithValue("@price", price);
+
+                    connection.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        return "Quotation responded successfully!";
+                    }
+                    else
+                    {
+                        return "Failed to respond to quotation.";
+                    }
+                }
             }
         }
 

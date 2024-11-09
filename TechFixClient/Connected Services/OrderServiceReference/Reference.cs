@@ -22,6 +22,13 @@ namespace TechFixClient.OrderServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrders", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> GetOrdersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrdersBySupplier", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetOrdersBySupplier(int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrdersBySupplier", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetOrdersBySupplierAsync(int supplierId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -57,6 +64,14 @@ namespace TechFixClient.OrderServiceReference {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> GetOrdersAsync() {
             return base.Channel.GetOrdersAsync();
+        }
+        
+        public System.Data.DataSet GetOrdersBySupplier(int supplierId) {
+            return base.Channel.GetOrdersBySupplier(supplierId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetOrdersBySupplierAsync(int supplierId) {
+            return base.Channel.GetOrdersBySupplierAsync(supplierId);
         }
     }
 }

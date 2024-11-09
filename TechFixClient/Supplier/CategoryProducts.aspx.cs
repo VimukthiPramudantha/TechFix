@@ -28,8 +28,8 @@ namespace TechFixClient.Supplier
             if (categories != null)
             {
                 ddlCategory.DataSource = categories;
-                ddlCategory.DataTextField = "CategoryName";
-                ddlCategory.DataValueField = "CategoryId";
+                ddlCategory.DataTextField = "categoryName";
+                ddlCategory.DataValueField = "categoryId";
                 ddlCategory.DataBind();
             }
 

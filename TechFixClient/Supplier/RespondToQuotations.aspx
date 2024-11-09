@@ -6,49 +6,70 @@
 <head runat="server">
     <title>Respond to Quotations</title>
     <style>
+        /* General Styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
+            background-color: #f7f7f7;
+            padding: 20px;
         }
+
         .container {
             max-width: 900px;
-            margin: 30px auto;
+            margin: 0 auto;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
+
         h2 {
             text-align: center;
-            color: #007bff;
+            color: #333;
         }
-        .response-form {
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 20px;
         }
-        .response-form input[type="text"], .response-form input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+
+        table, th, td {
             border: 1px solid #ddd;
-            border-radius: 5px;
         }
-        .response-form input[type="submit"] {
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
             background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn {
+            background-color: #28a745;
             color: white;
             border: none;
-            padding: 10px 20px;
-            cursor: pointer;
+            padding: 8px 15px;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .response-form input[type="submit"]:hover {
-            background-color: #0056b3;
+
+        .btn:hover {
+            background-color: #218838;
         }
-        .message {
+
+        .text-box {
+            width: 80px;
+            padding: 5px;
             text-align: center;
+        }
+
+        .message {
             margin-top: 20px;
+            text-align: center;
             color: green;
         }
     </style>
@@ -57,26 +78,24 @@
     <form id="form1" runat="server">
         <div class="container">
             <h2>Respond to Quotations</h2>
-
-            <asp:GridView ID="gvQuotations" runat="server" AutoGenerateColumns="False" OnRowCommand="gvQuotations_RowCommand" OnSelectedIndexChanged="gvQuotations_SelectedIndexChanged">
-    <Columns>
-        <asp:BoundField DataField="quotationId" HeaderText="Quotation ID" />
-        <asp:BoundField DataField="productName" HeaderText="Product Name" />
-        <asp:BoundField DataField="quantity" HeaderText="Quantity" />
-        <asp:TemplateField HeaderText="Price">
-            <ItemTemplate>
-                <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
-            </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField>
-            <ItemTemplate>
-                <asp:Button ID="btnRespond" runat="server" Text="Respond" CommandName="Respond" CommandArgument='<%# Eval("quotationId") %>' />
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Columns>
-</asp:GridView>
-
-<asp:Label ID="lblMessage" runat="server" ForeColor="Green"></asp:Label>
+            <asp:GridView ID="gvQuotations" runat="server" AutoGenerateColumns="False" OnRowCommand="gvQuotations_RowCommand">
+                <Columns>
+                    <asp:BoundField DataField="quotationId" HeaderText="Quotation ID" />
+                    <asp:BoundField DataField="productName" HeaderText="Product Name" />
+                    <asp:BoundField DataField="quantity" HeaderText="Quantity" />
+                    <asp:TemplateField HeaderText="Your Price">
+                        <ItemTemplate>
+                            <asp:TextBox ID="txtPrice" runat="server" CssClass="text-box"></asp:TextBox>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="btnRespond" runat="server" Text="Submit Response" CommandName="Respond" CommandArgument='<%# Eval("quotationId") %>' CssClass="btn" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label>
         </div>
     </form>
 </body>

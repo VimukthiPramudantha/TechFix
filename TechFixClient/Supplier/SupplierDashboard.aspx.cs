@@ -42,7 +42,7 @@ namespace TechFixClient.Supplier
         // Event handler for View Order Status button
         public void btnOrderStatus_Click(object sender, EventArgs e)
         {
-            Response.Redirect("OrderStatus.aspx");
+            Response.Redirect("ViewOrderStatus.aspx");
         }
 
         // Event handler for Logout button

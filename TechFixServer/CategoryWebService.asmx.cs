@@ -27,10 +27,10 @@ namespace TechFixServer
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Category (CategoryName) VALUES (@CategoryName)";
+                    string query = "INSERT INTO Category (categoryName) VALUES (@categoryName)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                        cmd.Parameters.AddWithValue("@categoryName", categoryName);
                         connection.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
                         return rowsAffected > 0; // Return true if insert was successful
@@ -51,14 +51,14 @@ namespace TechFixServer
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT CategoryId, CategoryName FROM Category";
+                    string query = "SELECT categoryId, categoryName FROM Category";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(dt);
                     }
                 }
-                dt.TableName = "Categories";
+                dt.TableName = "Category";
                 return dt;
             }
             catch (Exception)
