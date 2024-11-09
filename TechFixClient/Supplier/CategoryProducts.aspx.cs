@@ -68,5 +68,15 @@ namespace TechFixClient.Supplier
                 lblMessage.Text = "No products found for the selected category.";
             }
         }
+
+        protected void gvProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Example of handling the selected row
+            int index = gvProducts.SelectedIndex;
+            GridViewRow selectedRow = gvProducts.Rows[index];
+            string selectedProductName = selectedRow.Cells[0].Text; // Assuming ProductName is in the first column
+
+            lblMessage.Text = "Selected Product: " + selectedProductName;
+        }
     }
 }

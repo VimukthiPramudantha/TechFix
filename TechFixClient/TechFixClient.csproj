@@ -130,6 +130,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Admin\ViewProduct.aspx" />
     <Content Include="Supplier\CategoryProducts.aspx" />
+    <Content Include="Supplier\RespondToQuotations.aspx" />
     <Content Include="Supplier\SupplierDashboard.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="Supplier\CategoryProducts.aspx.designer.cs">
       <DependentUpon>CategoryProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\RespondToQuotations.aspx.cs">
+      <DependentUpon>RespondToQuotations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier\RespondToQuotations.aspx.designer.cs">
+      <DependentUpon>RespondToQuotations.aspx</DependentUpon>
     </Compile>
     <Compile Include="Supplier\SupplierDashboard.aspx.cs">
       <DependentUpon>SupplierDashboard.aspx</DependentUpon>

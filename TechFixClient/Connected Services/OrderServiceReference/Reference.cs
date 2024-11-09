@@ -16,13 +16,6 @@ namespace TechFixClient.OrderServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OrderServiceReference.OrderServiceSoap")]
     public interface OrderServiceSoap {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool Login(string email, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> LoginAsync(string email, string password);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetOrders", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataTable GetOrders();
@@ -56,14 +49,6 @@ namespace TechFixClient.OrderServiceReference {
         
         public OrderServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public bool Login(string email, string password) {
-            return base.Channel.Login(email, password);
-        }
-        
-        public System.Threading.Tasks.Task<bool> LoginAsync(string email, string password) {
-            return base.Channel.LoginAsync(email, password);
         }
         
         public System.Data.DataTable GetOrders() {

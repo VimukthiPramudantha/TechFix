@@ -119,7 +119,7 @@ namespace TechFixServer
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Quotations (ProductId, CategoryId, Quantity, Status) VALUES (@ProductId, @CategoryId, @Quantity, 'Pending')";
+                    string query = "INSERT INTO Quotations (ProductId, CategoryId, Status, Quantity) VALUES (@ProductId, @CategoryId, 'open', @Quantity)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@ProductId", productId);
