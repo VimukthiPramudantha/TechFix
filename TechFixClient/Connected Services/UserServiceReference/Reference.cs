@@ -15,12 +15,166 @@ namespace TechFixClient.UserServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceReference.UserServiceSoap")]
     public interface UserServiceSoap {
         
+        // CODEGEN: Generating message contract since element name email from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AuthenticateUser", ReplyAction="*")]
+        TechFixClient.UserServiceReference.AuthenticateUserResponse AuthenticateUser(TechFixClient.UserServiceReference.AuthenticateUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AuthenticateUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<TechFixClient.UserServiceReference.AuthenticateUserResponse> AuthenticateUserAsync(TechFixClient.UserServiceReference.AuthenticateUserRequest request);
+        
+        // CODEGEN: Generating message contract since element name email from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetUserIdByEmail", ReplyAction="*")]
+        TechFixClient.UserServiceReference.GetUserIdByEmailResponse GetUserIdByEmail(TechFixClient.UserServiceReference.GetUserIdByEmailRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetUserIdByEmail", ReplyAction="*")]
+        System.Threading.Tasks.Task<TechFixClient.UserServiceReference.GetUserIdByEmailResponse> GetUserIdByEmailAsync(TechFixClient.UserServiceReference.GetUserIdByEmailRequest request);
+        
         // CODEGEN: Generating message contract since element name userName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddSupplier", ReplyAction="*")]
         TechFixClient.UserServiceReference.AddSupplierResponse AddSupplier(TechFixClient.UserServiceReference.AddSupplierRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddSupplier", ReplyAction="*")]
         System.Threading.Tasks.Task<TechFixClient.UserServiceReference.AddSupplierResponse> AddSupplierAsync(TechFixClient.UserServiceReference.AddSupplierRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AuthenticateUserRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AuthenticateUser", Namespace="http://tempuri.org/", Order=0)]
+        public TechFixClient.UserServiceReference.AuthenticateUserRequestBody Body;
+        
+        public AuthenticateUserRequest() {
+        }
+        
+        public AuthenticateUserRequest(TechFixClient.UserServiceReference.AuthenticateUserRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AuthenticateUserRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public AuthenticateUserRequestBody() {
+        }
+        
+        public AuthenticateUserRequestBody(string email, string password) {
+            this.email = email;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AuthenticateUserResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AuthenticateUserResponse", Namespace="http://tempuri.org/", Order=0)]
+        public TechFixClient.UserServiceReference.AuthenticateUserResponseBody Body;
+        
+        public AuthenticateUserResponse() {
+        }
+        
+        public AuthenticateUserResponse(TechFixClient.UserServiceReference.AuthenticateUserResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AuthenticateUserResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AuthenticateUserResult;
+        
+        public AuthenticateUserResponseBody() {
+        }
+        
+        public AuthenticateUserResponseBody(string AuthenticateUserResult) {
+            this.AuthenticateUserResult = AuthenticateUserResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetUserIdByEmailRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUserIdByEmail", Namespace="http://tempuri.org/", Order=0)]
+        public TechFixClient.UserServiceReference.GetUserIdByEmailRequestBody Body;
+        
+        public GetUserIdByEmailRequest() {
+        }
+        
+        public GetUserIdByEmailRequest(TechFixClient.UserServiceReference.GetUserIdByEmailRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetUserIdByEmailRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string email;
+        
+        public GetUserIdByEmailRequestBody() {
+        }
+        
+        public GetUserIdByEmailRequestBody(string email) {
+            this.email = email;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetUserIdByEmailResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUserIdByEmailResponse", Namespace="http://tempuri.org/", Order=0)]
+        public TechFixClient.UserServiceReference.GetUserIdByEmailResponseBody Body;
+        
+        public GetUserIdByEmailResponse() {
+        }
+        
+        public GetUserIdByEmailResponse(TechFixClient.UserServiceReference.GetUserIdByEmailResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetUserIdByEmailResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int GetUserIdByEmailResult;
+        
+        public GetUserIdByEmailResponseBody() {
+        }
+        
+        public GetUserIdByEmailResponseBody(int GetUserIdByEmailResult) {
+            this.GetUserIdByEmailResult = GetUserIdByEmailResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -128,6 +282,58 @@ namespace TechFixClient.UserServiceReference {
         
         public UserServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TechFixClient.UserServiceReference.AuthenticateUserResponse TechFixClient.UserServiceReference.UserServiceSoap.AuthenticateUser(TechFixClient.UserServiceReference.AuthenticateUserRequest request) {
+            return base.Channel.AuthenticateUser(request);
+        }
+        
+        public string AuthenticateUser(string email, string password) {
+            TechFixClient.UserServiceReference.AuthenticateUserRequest inValue = new TechFixClient.UserServiceReference.AuthenticateUserRequest();
+            inValue.Body = new TechFixClient.UserServiceReference.AuthenticateUserRequestBody();
+            inValue.Body.email = email;
+            inValue.Body.password = password;
+            TechFixClient.UserServiceReference.AuthenticateUserResponse retVal = ((TechFixClient.UserServiceReference.UserServiceSoap)(this)).AuthenticateUser(inValue);
+            return retVal.Body.AuthenticateUserResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TechFixClient.UserServiceReference.AuthenticateUserResponse> TechFixClient.UserServiceReference.UserServiceSoap.AuthenticateUserAsync(TechFixClient.UserServiceReference.AuthenticateUserRequest request) {
+            return base.Channel.AuthenticateUserAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TechFixClient.UserServiceReference.AuthenticateUserResponse> AuthenticateUserAsync(string email, string password) {
+            TechFixClient.UserServiceReference.AuthenticateUserRequest inValue = new TechFixClient.UserServiceReference.AuthenticateUserRequest();
+            inValue.Body = new TechFixClient.UserServiceReference.AuthenticateUserRequestBody();
+            inValue.Body.email = email;
+            inValue.Body.password = password;
+            return ((TechFixClient.UserServiceReference.UserServiceSoap)(this)).AuthenticateUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TechFixClient.UserServiceReference.GetUserIdByEmailResponse TechFixClient.UserServiceReference.UserServiceSoap.GetUserIdByEmail(TechFixClient.UserServiceReference.GetUserIdByEmailRequest request) {
+            return base.Channel.GetUserIdByEmail(request);
+        }
+        
+        public int GetUserIdByEmail(string email) {
+            TechFixClient.UserServiceReference.GetUserIdByEmailRequest inValue = new TechFixClient.UserServiceReference.GetUserIdByEmailRequest();
+            inValue.Body = new TechFixClient.UserServiceReference.GetUserIdByEmailRequestBody();
+            inValue.Body.email = email;
+            TechFixClient.UserServiceReference.GetUserIdByEmailResponse retVal = ((TechFixClient.UserServiceReference.UserServiceSoap)(this)).GetUserIdByEmail(inValue);
+            return retVal.Body.GetUserIdByEmailResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TechFixClient.UserServiceReference.GetUserIdByEmailResponse> TechFixClient.UserServiceReference.UserServiceSoap.GetUserIdByEmailAsync(TechFixClient.UserServiceReference.GetUserIdByEmailRequest request) {
+            return base.Channel.GetUserIdByEmailAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TechFixClient.UserServiceReference.GetUserIdByEmailResponse> GetUserIdByEmailAsync(string email) {
+            TechFixClient.UserServiceReference.GetUserIdByEmailRequest inValue = new TechFixClient.UserServiceReference.GetUserIdByEmailRequest();
+            inValue.Body = new TechFixClient.UserServiceReference.GetUserIdByEmailRequestBody();
+            inValue.Body.email = email;
+            return ((TechFixClient.UserServiceReference.UserServiceSoap)(this)).GetUserIdByEmailAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

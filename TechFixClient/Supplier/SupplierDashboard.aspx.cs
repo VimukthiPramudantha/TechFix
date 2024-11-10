@@ -13,18 +13,7 @@ namespace TechFixClient.Supplier
     {
         public void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                // Check if there's a username stored in the session
-                if (Session["Username"] != null)
-                {
-                    lblWelcome.Text = $"Welcome, {Session["Username"].ToString()}!";
-                }
-                else
-                {
-                    lblWelcome.Text = "Welcome, Supplier!";
-                }
-            }
+            
         }
 
         // Event handler for Category & Products button

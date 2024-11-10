@@ -4,59 +4,89 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Login</title>
+    <title>TechFix Client - Login</title>
     <style>
-        .form-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            border-radius: 8px;
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
+
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
         h2 {
+            text-align: center;
+            margin-bottom: 20px;
             color: #333;
         }
-        .form-input {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+
+        .form-group {
+            margin-bottom: 15px;
         }
-        .form-button {
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
             width: 100%;
             padding: 10px;
-            color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
             background-color: #007bff;
             border: none;
+            color: white;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .form-button:hover {
+
+        .btn:hover {
             background-color: #0056b3;
         }
-        .error-message {
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
             color: red;
-            font-weight: bold;
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="form-container">
-            <h2>Login</h2>
-            
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-input" placeholder="Email"></asp:TextBox>
-            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-input" placeholder="Password" TextMode="Password"></asp:TextBox>
-
-            <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="form-button" OnClick="btnLogin_Click" />
-
-            <asp:Label ID="lblErrorMessage" runat="server" CssClass="error-message" Visible="false"></asp:Label>
+        <div class="login-container">
+            <h2>TechFix Client Login</h2>
+            <div class="form-group">
+                <label for="txtEmail">Email:</label>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Placeholder="Enter your email"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Password:</label>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control" Placeholder="Enter your password"></asp:TextBox>
+            </div>
+            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="btn" />
+            <asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label>
         </div>
     </form>
 </body>

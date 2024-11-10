@@ -60,10 +60,17 @@ namespace TechFixClient.QuotationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RespondToQuotation", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string RespondToQuotation(int quotationId, decimal price);
+        string RespondToQuotation(int quotationId, decimal price, int userId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RespondToQuotation", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> RespondToQuotationAsync(int quotationId, decimal price);
+        System.Threading.Tasks.Task<string> RespondToQuotationAsync(int quotationId, decimal price, int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetUserIdByEmail", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int GetUserIdByEmail(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetUserIdByEmail", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> GetUserIdByEmailAsync(string email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -141,12 +148,20 @@ namespace TechFixClient.QuotationService {
             return base.Channel.GetAllQuotationsAsync();
         }
         
-        public string RespondToQuotation(int quotationId, decimal price) {
-            return base.Channel.RespondToQuotation(quotationId, price);
+        public string RespondToQuotation(int quotationId, decimal price, int userId) {
+            return base.Channel.RespondToQuotation(quotationId, price, userId);
         }
         
-        public System.Threading.Tasks.Task<string> RespondToQuotationAsync(int quotationId, decimal price) {
-            return base.Channel.RespondToQuotationAsync(quotationId, price);
+        public System.Threading.Tasks.Task<string> RespondToQuotationAsync(int quotationId, decimal price, int userId) {
+            return base.Channel.RespondToQuotationAsync(quotationId, price, userId);
+        }
+        
+        public int GetUserIdByEmail(string email) {
+            return base.Channel.GetUserIdByEmail(email);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetUserIdByEmailAsync(string email) {
+            return base.Channel.GetUserIdByEmailAsync(email);
         }
     }
 }

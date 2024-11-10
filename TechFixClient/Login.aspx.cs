@@ -10,34 +10,53 @@ namespace TechFixClient
 {
     public partial class Login : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            lblErrorMessage.Text = string.Empty;
-        }
-
+        UserServiceReference.UserServiceSoapClient userService = new UserServiceReference.UserServiceSoapClient();
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            // Get email and password from the textboxes
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
-
-            // Create an instance of the LoginService web service
-            LoginServiceReference.LoginServiceSoapClient loginService = new LoginServiceReference.LoginServiceSoapClient();
-
-            // Call the Login method in the LoginService
-            bool isValidUser = loginService.Login(email, password);
-
-            if (isValidUser)
+            try
             {
-                // Redirect to the admin dashboard in the Admin folder on successful login
-                Response.Redirect("~/Supplier/SupplierDashboard.aspx");
+               
+                // Get the entered email and password
+                string email = txtEmail.Text?.Trim();
+                string password = txtPassword.Text?.Trim();
+
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                {
+                    lblMessage.Text = "Please enter both email and password.";
+                    return;
+                }
+
+               
+               
+                // Authenticate user
+                string role = userService.AuthenticateUser(email, password);
+
+                if (role == null)
+                {
+                    lblMessage.Text = "Error during authentication.";
+                }
+                else if (role == "Admin")
+                {
+                    Response.Redirect("Admin/AdminDashBrod.aspx");
+                }
+                else if (role == "Supplier")
+                {
+                    int userId = userService.GetUserIdByEmail(email);
+
+                    // Save the userId in the session
+                    Session["userId"] = userId;
+                    Response.Redirect("Supplier/SupplierDashboard.aspx");
+                }
+                else
+                {
+                    lblMessage.Text = "Invalid email or password.";
+                }
             }
-
+            catch (Exception ex)
             {
-                // Display error message on login failure
-                lblErrorMessage.Text = "Invalid email or password.";
-                lblErrorMessage.Visible = true;
+                lblMessage.Text = "An unexpected error occurred: " + ex.Message;
             }
         }
+
     }
 }

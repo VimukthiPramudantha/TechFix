@@ -87,10 +87,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <h2>Supplier Dashboard</h2>
-
-            <!-- Welcome Message -->
-            <asp:Label ID="lblWelcome" runat="server" CssClass="welcome-message"></asp:Label>
+            <h2>Supplier Dashboard</h2>           
 
             <!-- Dashboard Buttons -->
             <div class="dashboard-buttons">

@@ -78,7 +78,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <h2>Respond to Quotations</h2>
-            <asp:GridView ID="gvQuotations" runat="server" AutoGenerateColumns="False" OnRowCommand="gvQuotations_RowCommand">
+            <asp:GridView ID="gvQuotations" runat="server" AutoGenerateColumns="False" DataKeyNames="quotationId" OnRowCommand="gvQuotations_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="quotationId" HeaderText="Quotation ID" />
                     <asp:BoundField DataField="productName" HeaderText="Product Name" />
@@ -90,12 +90,12 @@
                     </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button ID="btnRespond" runat="server" Text="Submit Response" CommandName="Respond" CommandArgument='<%# Eval("quotationId") %>' CssClass="btn" />
+                            <asp:Button ID="btnRespond" runat="server" Text="Submit Response" CommandName="Respond" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            <asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label>
+            <asp:Label ID="lblMessage" runat="server" CssClass="message" ForeColor="Red"></asp:Label>
         </div>
     </form>
 </body>

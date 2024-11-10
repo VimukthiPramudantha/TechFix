@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "E:\\Projects\\TechFix\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\respondtoquotations.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\respondtoquotations.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\respondtoquotations.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\respondtoquotations.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}|TechFixServer\\TechFixServer.csproj|e:\\projects\\techfix\\techfixserver\\userservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}|TechFixServer\\TechFixServer.csproj|solutionrelative:techfixserver\\userservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}|TechFixServer\\TechFixServer.csproj|e:\\projects\\techfix\\techfixserver\\quotationwebservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}|TechFixServer\\TechFixServer.csproj|solutionrelative:techfixserver\\quotationwebservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\supplierdashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\supplierdashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\supplierdashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|E:\\Projects\\TechFix\\techfixclient\\supplier\\supplierdashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\supplierdashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}|TechFixServer\\TechFixServer.csproj|e:\\projects\\techfix\\techfixserver\\orderservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F3AEF0C-CF7B-41D0-88EE-BBFB638B7908}|TechFixServer\\TechFixServer.csproj|solutionrelative:techfixserver\\orderservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\vieworderstatus.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\vieworderstatus.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\vieworderstatus.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\vieworderstatus.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\categoryproducts.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\categoryproducts.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|e:\\projects\\techfix\\techfixclient\\supplier\\categoryproducts.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{90B9469B-FF09-4FD8-A9DC-70950B4DC427}|TechFixClient\\TechFixClient.csproj|solutionrelative:techfixclient\\supplier\\categoryproducts.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,71 +38,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SupplierDashboard.aspx.cs",
-              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
-              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
-              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
-              "RelativeToolTip": "TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAArwC0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T16:05:48.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SupplierDashboard.aspx",
-              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx",
-              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\SupplierDashboard.aspx",
-              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx",
-              "RelativeToolTip": "TechFixClient\\Supplier\\SupplierDashboard.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-09T16:05:44.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ViewOrderStatus.aspx.cs",
-              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\ViewOrderStatus.aspx.cs",
-              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\ViewOrderStatus.aspx.cs",
-              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\ViewOrderStatus.aspx.cs",
-              "RelativeToolTip": "TechFixClient\\Supplier\\ViewOrderStatus.aspx.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB8AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T15:54:58.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ViewOrderStatus.aspx",
-              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\ViewOrderStatus.aspx",
-              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\ViewOrderStatus.aspx",
-              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\ViewOrderStatus.aspx",
-              "RelativeToolTip": "TechFixClient\\Supplier\\ViewOrderStatus.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-09T15:53:04.488Z",
+              "Title": "UserService.asmx.cs",
+              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixServer\\UserService.asmx.cs",
+              "RelativeDocumentMoniker": "TechFixServer\\UserService.asmx.cs",
+              "ToolTip": "E:\\Projects\\TechFix\\TechFixServer\\UserService.asmx.cs",
+              "RelativeToolTip": "TechFixServer\\UserService.asmx.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAowFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T10:21:21.72Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OrderService.asmx.cs",
-              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixServer\\OrderService.asmx.cs",
-              "RelativeDocumentMoniker": "TechFixServer\\OrderService.asmx.cs",
-              "ToolTip": "E:\\Projects\\TechFix\\TechFixServer\\OrderService.asmx.cs",
-              "RelativeToolTip": "TechFixServer\\OrderService.asmx.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAkwDcAAAAfAAAAAAAAAA==",
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "TechFixClient\\Login.aspx.cs",
+              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Login.aspx.cs",
+              "RelativeToolTip": "TechFixClient\\Login.aspx.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwC4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T15:52:03.353Z",
+              "WhenOpened": "2024-11-10T10:11:18.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RespondToQuotations.aspx",
+              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\RespondToQuotations.aspx",
+              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\RespondToQuotations.aspx",
+              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\RespondToQuotations.aspx",
+              "RelativeToolTip": "TechFixClient\\Supplier\\RespondToQuotations.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-10T09:58:49.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RespondToQuotations.aspx.cs",
+              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\RespondToQuotations.aspx.cs",
+              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\RespondToQuotations.aspx.cs",
+              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\RespondToQuotations.aspx.cs",
+              "RelativeToolTip": "TechFixClient\\Supplier\\RespondToQuotations.aspx.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAowCgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T09:54:59.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QuotationWebService.asmx.cs",
+              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixServer\\QuotationWebService.asmx.cs",
+              "RelativeDocumentMoniker": "TechFixServer\\QuotationWebService.asmx.cs",
+              "ToolTip": "E:\\Projects\\TechFix\\TechFixServer\\QuotationWebService.asmx.cs",
+              "RelativeToolTip": "TechFixServer\\QuotationWebService.asmx.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAAAMgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T09:41:12.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SupplierDashboard.aspx.cs",
+              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
+              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
+              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
+              "RelativeToolTip": "TechFixClient\\Supplier\\SupplierDashboard.aspx.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T09:36:05.499Z",
               "EditorCaption": ""
             },
             {
@@ -111,28 +124,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CategoryProducts.aspx.cs",
-              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\CategoryProducts.aspx.cs",
-              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\CategoryProducts.aspx.cs",
-              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\CategoryProducts.aspx.cs",
-              "RelativeToolTip": "TechFixClient\\Supplier\\CategoryProducts.aspx.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAkwCIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T15:45:59.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "CategoryProducts.aspx",
-              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\CategoryProducts.aspx",
-              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\CategoryProducts.aspx",
-              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\CategoryProducts.aspx",
-              "RelativeToolTip": "TechFixClient\\Supplier\\CategoryProducts.aspx",
+              "Title": "SupplierDashboard.aspx",
+              "DocumentMoniker": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx",
+              "RelativeDocumentMoniker": "TechFixClient\\Supplier\\SupplierDashboard.aspx",
+              "ToolTip": "E:\\Projects\\TechFix\\TechFixClient\\Supplier\\SupplierDashboard.aspx",
+              "RelativeToolTip": "TechFixClient\\Supplier\\SupplierDashboard.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-09T15:45:51.44Z",
+              "WhenOpened": "2024-11-09T16:05:44.291Z",
               "EditorCaption": ""
             }
           ]

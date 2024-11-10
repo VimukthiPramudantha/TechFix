@@ -158,32 +158,48 @@ namespace TechFixServer
         }
 
         [WebMethod]
-        public string RespondToQuotation(int quotationId, decimal price)
+        public string RespondToQuotation(int quotationId, decimal price, int userId)
         {
+            if (quotationId <= 0 || price <= 0)
+            {
+                return "Invalid quotation ID or price.";
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = @"
-                    INSERT INTO QuotationResponse (quotationId, price, response) 
-                    VALUES (@quotationId, @price, 'Accepted')";
-
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@quotationId", quotationId);
-                    cmd.Parameters.AddWithValue("@price", price);
+                    string query = @"
+                INSERT INTO QuotationResponse (quotationId,userId, price, response) 
+                VALUES (@quotationId,@userId, @price, 'accept')";
 
-                    connection.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-                        return "Quotation responded successfully!";
+                        cmd.Parameters.AddWithValue("@quotationId", quotationId);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        connection.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return "Quotation responded successfully!";
+                        }
+                        else
+                        {
+                            return "Failed to respond to quotation.";
+                        }
                     }
-                    else
-                    {
-                        return "Failed to respond to quotation.";
-                    }
+                }
+                catch (Exception ex)
+                {
+                    return "An error occurred: " + ex.Message;
                 }
             }
         }
+
+      
+
 
     }
 }
