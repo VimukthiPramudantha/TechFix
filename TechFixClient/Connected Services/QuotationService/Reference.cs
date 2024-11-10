@@ -74,10 +74,10 @@ namespace TechFixClient.QuotationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSupplierQuotations", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataTable GetSupplierQuotations(int supplierId);
+        System.Data.DataTable GetSupplierQuotations(int userId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSupplierQuotations", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataTable> GetSupplierQuotationsAsync(int supplierId);
+        System.Threading.Tasks.Task<System.Data.DataTable> GetSupplierQuotationsAsync(int userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -171,12 +171,12 @@ namespace TechFixClient.QuotationService {
             return base.Channel.GetAllQuotationResponsesAsync();
         }
         
-        public System.Data.DataTable GetSupplierQuotations(int supplierId) {
-            return base.Channel.GetSupplierQuotations(supplierId);
+        public System.Data.DataTable GetSupplierQuotations(int userId) {
+            return base.Channel.GetSupplierQuotations(userId);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> GetSupplierQuotationsAsync(int supplierId) {
-            return base.Channel.GetSupplierQuotationsAsync(supplierId);
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetSupplierQuotationsAsync(int userId) {
+            return base.Channel.GetSupplierQuotationsAsync(userId);
         }
     }
 }

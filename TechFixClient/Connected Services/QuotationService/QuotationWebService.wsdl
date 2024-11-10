@@ -148,7 +148,7 @@
       <s:element name="GetSupplierQuotations">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>

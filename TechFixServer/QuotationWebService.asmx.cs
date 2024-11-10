@@ -205,31 +205,31 @@ namespace TechFixServer
             try
             {
                 // Ensure the connection string is configured correctly
-                string connString = ConfigurationManager.ConnectionStrings["TechFixDB"]?.ConnectionString;
-                if (string.IsNullOrEmpty(connString))
+                if (string.IsNullOrEmpty(connectionString))
                 {
                     throw new Exception("Connection string is missing or empty.");
                 }
 
-                using (SqlConnection conn = new SqlConnection(connString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"
-                SELECT 
-                    q.quotationId AS QuotationID,
-                    q.productName AS ProductName,
-                    q.quantity AS Quantity,
-                    q.requestedDate AS RequestedDate,
-                    COALESCE(qr.price, 0) AS ResponsePrice,
-                    COALESCE(qr.response, 'No Response') AS ResponseMessage,
-                    COALESCE(qr.responseDate, '') AS ResponseDate,
-                    s.supplierName AS SupplierName
-                FROM Quotations q
-                LEFT JOIN QuotationResponses qr ON q.quotationId = qr.quotationId
-                LEFT JOIN Suppliers s ON qr.supplierId = s.supplierId
-                ORDER BY q.quotationId";
+            SELECT 
+    q.quotationId AS QuotationID,
+    p.productName AS ProductName,
+    q.Quantity AS Quantity,
+    COALESCE(qr.price, 0) AS ResponsePrice,
+    COALESCE(qr.response, 'No Response') AS ResponseMessage,
+    u.userName AS SupplierName
+FROM Quotations q
+LEFT JOIN QuotationResponse qr ON q.quotationId = qr.quotationId
+LEFT JOIN Product p ON q.productId = p.productId
+LEFT JOIN [User] u ON qr.userId = u.userId AND u.role = 'Supplier'
+ORDER BY q.quotationId;";
+
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        // Open the connection
                         conn.Open();
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
@@ -239,20 +239,24 @@ namespace TechFixServer
                     }
                 }
 
-                if (dt.Rows.Count == 0)
+                // If no rows are returned, handle it gracefully
+                if (dt == null || dt.Rows.Count == 0)
                 {
                     throw new Exception("No data found in Quotations responses table.");
                 }
             }
             catch (SqlException sqlEx)
             {
+                // Return detailed SQL error
                 throw new Exception("Database error: " + sqlEx.Message);
             }
             catch (Exception ex)
             {
+                // Return general error message
                 throw new Exception("An error occurred: " + ex.Message);
             }
-
+            dt.TableName = "Quotation";
+            // Return the DataTable with the results
             return dt;
         }
 

@@ -59,11 +59,7 @@
                     <asp:BoundField DataField="QuotationID" HeaderText="Quotation ID" />
                     <asp:BoundField DataField="ProductName" HeaderText="Product Name" />
                     <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
-                    <asp:BoundField DataField="RequestedDate" HeaderText="Requested Date" />
                     <asp:BoundField DataField="ResponsePrice" HeaderText="Response Price" />
-                    <asp:BoundField DataField="ResponseMessage" HeaderText="Response Message" />
-                    <asp:BoundField DataField="ResponseDate" HeaderText="Response Date" />
-                    <asp:BoundField DataField="SupplierName" HeaderText="Supplier Name" />
                 </Columns>
             </asp:GridView>
             <asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label>
