@@ -128,17 +128,41 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetUserIdByEmail">
+      <s:element name="GetAllQuotationResponses">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllQuotationResponsesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllQuotationResponsesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetUserIdByEmailResponse">
+      <s:element name="GetSupplierQuotations">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="GetUserIdByEmailResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierQuotationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSupplierQuotationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -186,11 +210,17 @@
   <wsdl:message name="RespondToQuotationSoapOut">
     <wsdl:part name="parameters" element="tns:RespondToQuotationResponse" />
   </wsdl:message>
-  <wsdl:message name="GetUserIdByEmailSoapIn">
-    <wsdl:part name="parameters" element="tns:GetUserIdByEmail" />
+  <wsdl:message name="GetAllQuotationResponsesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllQuotationResponses" />
   </wsdl:message>
-  <wsdl:message name="GetUserIdByEmailSoapOut">
-    <wsdl:part name="parameters" element="tns:GetUserIdByEmailResponse" />
+  <wsdl:message name="GetAllQuotationResponsesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllQuotationResponsesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierQuotationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierQuotations" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierQuotationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierQuotationsResponse" />
   </wsdl:message>
   <wsdl:portType name="QuotationWebServiceSoap">
     <wsdl:operation name="GetQuotationsByProduct">
@@ -221,9 +251,13 @@
       <wsdl:input message="tns:RespondToQuotationSoapIn" />
       <wsdl:output message="tns:RespondToQuotationSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetUserIdByEmail">
-      <wsdl:input message="tns:GetUserIdByEmailSoapIn" />
-      <wsdl:output message="tns:GetUserIdByEmailSoapOut" />
+    <wsdl:operation name="GetAllQuotationResponses">
+      <wsdl:input message="tns:GetAllQuotationResponsesSoapIn" />
+      <wsdl:output message="tns:GetAllQuotationResponsesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierQuotations">
+      <wsdl:input message="tns:GetSupplierQuotationsSoapIn" />
+      <wsdl:output message="tns:GetSupplierQuotationsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="QuotationWebServiceSoap" type="tns:QuotationWebServiceSoap">
@@ -291,8 +325,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetUserIdByEmail">
-      <soap:operation soapAction="http://tempuri.org/GetUserIdByEmail" style="document" />
+    <wsdl:operation name="GetAllQuotationResponses">
+      <soap:operation soapAction="http://tempuri.org/GetAllQuotationResponses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierQuotations">
+      <soap:operation soapAction="http://tempuri.org/GetSupplierQuotations" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -366,8 +409,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetUserIdByEmail">
-      <soap12:operation soapAction="http://tempuri.org/GetUserIdByEmail" style="document" />
+    <wsdl:operation name="GetAllQuotationResponses">
+      <soap12:operation soapAction="http://tempuri.org/GetAllQuotationResponses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierQuotations">
+      <soap12:operation soapAction="http://tempuri.org/GetSupplierQuotations" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

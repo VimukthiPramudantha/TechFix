@@ -34,11 +34,6 @@ namespace TechFixClient.Admin
             Response.Redirect("ViewProduct.aspx"); 
         }
 
-        protected void btnViewOrders_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ViewOrders.aspx"); 
-        }
-
         protected void btnNewQuotations_Click(object sender, EventArgs e)
         {
             Response.Redirect("ViewQuotations.aspx"); 

@@ -17,76 +17,31 @@ namespace TechFixClient.Admin
         {
             if (!IsPostBack)
             {
-                LoadProducts();
+                LoadQuotationsResponses();
             }
         }
 
-        private void LoadProducts()
+        private void LoadQuotationsResponses()
         {
-            // Load product list for the dropdown - replace with actual method to get products
-            ddlProducts.Items.Clear();
-            ddlProducts.Items.Add(new ListItem("Select a Product", "0"));
-            ddlProducts.Items.Add(new ListItem("Product 1", "1"));
-            ddlProducts.Items.Add(new ListItem("Product 2", "2"));
-            // Add more products as needed
-        }
-
-        protected void ddlProducts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int productId = Convert.ToInt32(ddlProducts.SelectedValue);
-            if (productId > 0)
+            try
             {
-                LoadQuotations(productId);
+                
+                DataTable dt = service.GetAllQuotationResponses();
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    gvQuotationResponses.DataSource = dt;
+                    gvQuotationResponses.DataBind();
+                    lblMessage.Text = string.Empty;
+                }
+                else
+                {
+                    lblMessage.Text = "No quotation responses available.";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                gvQuotations.Visible = false;
-            }
-        }
-
-        private void LoadQuotations(int productId)
-        {
-            DataTable quotationsTable = service.GetQuotationsByProduct(productId);
-            
-
-            gvQuotations.DataSource = quotationsTable;
-            gvQuotations.DataBind();
-            gvQuotations.Visible = true;
-        }
-
-        protected void btnAccept_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            int quotationId = Convert.ToInt32(btn.CommandArgument);
-
-            SaveQuotationResponse(quotationId, "Accepted");
-        }
-
-        protected void btnDecline_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            int quotationId = Convert.ToInt32(btn.CommandArgument);
-
-            SaveQuotationResponse(quotationId, "Declined");
-        }
-
-        private void SaveQuotationResponse(int quotationId, string response)
-        {
-            int quantity = 1; // Placeholder, replace with actual value
-            decimal price = 100; // Placeholder, replace with actual price
-
-            
-            bool success = service.SaveQuotationResponse(quotationId, userId, quantity, price, response);
-
-            if (success)
-            {
-                Response.Write("<script>alert('Quotation response saved successfully.');</script>");
-                int productId = Convert.ToInt32(ddlProducts.SelectedValue);
-                LoadQuotations(productId);
-            }
-            else
-            {
-                Response.Write("<script>alert('Failed to save quotation response.');</script>");
+                lblMessage.Text = "An error occurred while loading quotations: " + ex.Message;
             }
         }
     }

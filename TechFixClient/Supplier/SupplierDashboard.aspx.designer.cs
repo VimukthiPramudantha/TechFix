@@ -42,15 +42,6 @@ namespace TechFixClient.Supplier
         protected global::System.Web.UI.WebControls.Button btnResponseQuotations;
 
         /// <summary>
-        /// btnOrderStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOrderStatus;
-
-        /// <summary>
         /// btnLogout control.
         /// </summary>
         /// <remarks>

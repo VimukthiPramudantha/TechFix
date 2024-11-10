@@ -24,30 +24,21 @@ namespace TechFixClient.Admin
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblProduct control.
+        /// gvQuotationResponses control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProduct;
+        protected global::System.Web.UI.WebControls.GridView gvQuotationResponses;
 
         /// <summary>
-        /// ddlProducts control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProducts;
-
-        /// <summary>
-        /// gvQuotations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvQuotations;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

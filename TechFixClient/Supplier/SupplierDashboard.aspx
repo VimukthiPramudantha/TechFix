@@ -93,7 +93,6 @@
             <div class="dashboard-buttons">
                 <asp:Button ID="btnCategoryProducts" runat="server" CssClass="btn" Text="Category & Products" OnClick="btnCategoryProducts_Click" />
                 <asp:Button ID="btnResponseQuotations" runat="server" CssClass="btn" Text="Respond to Quotations" OnClick="btnResponseQuotations_Click" />
-                <asp:Button ID="btnOrderStatus" runat="server" CssClass="btn" Text="View Order Status" OnClick="btnOrderStatus_Click" />
                 <asp:Button ID="btnLogout" runat="server" CssClass="btn btn-logout" Text="Logout" OnClick="btnLogout_Click" />
             </div>
         </div>

@@ -27,7 +27,7 @@ namespace TechFixServer
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT quotationId, productId, categoryId, status FROM Quotation WHERE productId = @ProductId";
+                string query = "SELECT quotationId, productId, categoryId, status FROM Quotations WHERE productId = @ProductId";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@ProductId", productId);
 
@@ -139,7 +139,7 @@ namespace TechFixServer
                 return false;
             }
         }
-       
+
         [WebMethod]
         public DataTable GetAllQuotations()
         {
@@ -197,9 +197,107 @@ namespace TechFixServer
                 }
             }
         }
+        [WebMethod]
+        public DataTable GetAllQuotationResponses()
+        {
+            DataTable dt = new DataTable();
 
-      
+            try
+            {
+                // Ensure the connection string is configured correctly
+                string connString = ConfigurationManager.ConnectionStrings["TechFixDB"]?.ConnectionString;
+                if (string.IsNullOrEmpty(connString))
+                {
+                    throw new Exception("Connection string is missing or empty.");
+                }
 
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    string query = @"
+                SELECT 
+                    q.quotationId AS QuotationID,
+                    q.productName AS ProductName,
+                    q.quantity AS Quantity,
+                    q.requestedDate AS RequestedDate,
+                    COALESCE(qr.price, 0) AS ResponsePrice,
+                    COALESCE(qr.response, 'No Response') AS ResponseMessage,
+                    COALESCE(qr.responseDate, '') AS ResponseDate,
+                    s.supplierName AS SupplierName
+                FROM Quotations q
+                LEFT JOIN QuotationResponses qr ON q.quotationId = qr.quotationId
+                LEFT JOIN Suppliers s ON qr.supplierId = s.supplierId
+                ORDER BY q.quotationId";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        conn.Open();
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+
+                if (dt.Rows.Count == 0)
+                {
+                    throw new Exception("No data found in Quotations responses table.");
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                throw new Exception("Database error: " + sqlEx.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred: " + ex.Message);
+            }
+
+            return dt;
+        }
+
+        [WebMethod]
+        public DataTable GetSupplierQuotations(int userId)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = @"
+            SELECT 
+                q.quotationId AS QuotationID,
+                p.productName AS ProductName,
+                q.quantity AS Quantity,
+                qr.price AS ResponsePrice
+            FROM Quotations q
+            JOIN QuotationResponse qr ON q.quotationId = qr.quotationId
+            JOIN Product p ON q.productId = p.productId
+            WHERE qr.userId = @UserId
+            ORDER BY q.quotationId";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserId", userId);
+
+                        conn.Open();
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+
+                dt.TableName = "SupplierQuotations";
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred: " + ex.Message);
+            }
+
+            return dt;
+        }
 
     }
 }

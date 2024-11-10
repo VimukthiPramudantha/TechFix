@@ -4,29 +4,70 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Manage Quotations</title>
+    <title>View Quotation Responses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .message {
+            margin-top: 20px;
+            text-align: center;
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <h2>Quotation Management</h2>
-
-        <asp:Label ID="lblProduct" runat="server" Text="Select Product: " />
-        <asp:DropDownList ID="ddlProducts" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProducts_SelectedIndexChanged">
-        </asp:DropDownList>
-
-        <asp:GridView ID="gvQuotations" runat="server" AutoGenerateColumns="False" Visible="False">
-            <Columns>
-                <asp:BoundField DataField="quotationId" HeaderText="Quotation ID" />
-                <asp:BoundField DataField="categoryId" HeaderText="Category ID" />
-                <asp:BoundField DataField="status" HeaderText="Status" />
-                <asp:TemplateField HeaderText="Actions">
-                    <ItemTemplate>
-                        <asp:Button ID="btnAccept" runat="server" Text="Accept" CommandArgument='<%# Eval("quotationId") %>' OnClick="btnAccept_Click" />
-                        <asp:Button ID="btnDecline" runat="server" Text="Decline" CommandArgument='<%# Eval("quotationId") %>' OnClick="btnDecline_Click" />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
+        <div class="container">
+            <h2>All Quotation Responses</h2>
+            <asp:GridView ID="gvQuotationResponses" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="QuotationID" HeaderText="Quotation ID" />
+                    <asp:BoundField DataField="ProductName" HeaderText="Product Name" />
+                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
+                    <asp:BoundField DataField="RequestedDate" HeaderText="Requested Date" />
+                    <asp:BoundField DataField="ResponsePrice" HeaderText="Response Price" />
+                    <asp:BoundField DataField="ResponseMessage" HeaderText="Response Message" />
+                    <asp:BoundField DataField="ResponseDate" HeaderText="Response Date" />
+                    <asp:BoundField DataField="SupplierName" HeaderText="Supplier Name" />
+                </Columns>
+            </asp:GridView>
+            <asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label>
+        </div>
     </form>
 </body>
 </html>

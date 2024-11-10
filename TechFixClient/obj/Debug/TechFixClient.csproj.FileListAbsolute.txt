@@ -57,6 +57,8 @@ C:\Users\Vimukthi Pramudantha\source\repos\TechFix\TechFixClient\obj\Debug\TechF
 C:\Users\Vimukthi Pramudantha\source\repos\TechFix\TechFixClient\obj\Debug\TechFixC.2FA5B94B.Up2Date
 C:\Users\Vimukthi Pramudantha\source\repos\TechFix\TechFixClient\obj\Debug\TechFixClient.dll
 C:\Users\Vimukthi Pramudantha\source\repos\TechFix\TechFixClient\obj\Debug\TechFixClient.pdb
+E:\Projects\TechFix\TechFixClient\obj\Debug\TechFixClient.csproj.AssemblyReference.cache
+E:\Projects\TechFix\TechFixClient\obj\Debug\TechFixClient.csproj.CoreCompileInputs.cache
 E:\Projects\TechFix\TechFixClient\bin\TechFixClient.dll.config
 E:\Projects\TechFix\TechFixClient\bin\TechFixClient.dll
 E:\Projects\TechFix\TechFixClient\bin\TechFixClient.pdb
@@ -111,8 +113,6 @@ E:\Projects\TechFix\TechFixClient\bin\roslyn\VBCSCompiler.exe
 E:\Projects\TechFix\TechFixClient\bin\roslyn\VBCSCompiler.exe.config
 E:\Projects\TechFix\TechFixClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\Projects\TechFix\TechFixClient\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Projects\TechFix\TechFixClient\obj\Debug\TechFixClient.csproj.AssemblyReference.cache
-E:\Projects\TechFix\TechFixClient\obj\Debug\TechFixClient.csproj.CoreCompileInputs.cache
 E:\Projects\TechFix\TechFixClient\obj\Debug\TechFixC.2FA5B94B.Up2Date
 E:\Projects\TechFix\TechFixClient\obj\Debug\TechFixClient.dll
 E:\Projects\TechFix\TechFixClient\obj\Debug\TechFixClient.pdb

@@ -96,7 +96,6 @@
                 <Columns>
                     <asp:BoundField DataField="ProductId" HeaderText="Product ID" />
                     <asp:BoundField DataField="ProductName" HeaderText="Product Name" />
-                    <asp:BoundField DataField="CategoryName" HeaderText="Category" />
                 </Columns>
             </asp:GridView>
         </div>

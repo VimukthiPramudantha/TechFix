@@ -65,12 +65,19 @@ namespace TechFixClient.QuotationService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RespondToQuotation", ReplyAction="*")]
         System.Threading.Tasks.Task<string> RespondToQuotationAsync(int quotationId, decimal price, int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetUserIdByEmail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllQuotationResponses", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int GetUserIdByEmail(string email);
+        System.Data.DataTable GetAllQuotationResponses();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetUserIdByEmail", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> GetUserIdByEmailAsync(string email);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllQuotationResponses", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetAllQuotationResponsesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSupplierQuotations", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GetSupplierQuotations(int supplierId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSupplierQuotations", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetSupplierQuotationsAsync(int supplierId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -156,12 +163,20 @@ namespace TechFixClient.QuotationService {
             return base.Channel.RespondToQuotationAsync(quotationId, price, userId);
         }
         
-        public int GetUserIdByEmail(string email) {
-            return base.Channel.GetUserIdByEmail(email);
+        public System.Data.DataTable GetAllQuotationResponses() {
+            return base.Channel.GetAllQuotationResponses();
         }
         
-        public System.Threading.Tasks.Task<int> GetUserIdByEmailAsync(string email) {
-            return base.Channel.GetUserIdByEmailAsync(email);
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetAllQuotationResponsesAsync() {
+            return base.Channel.GetAllQuotationResponsesAsync();
+        }
+        
+        public System.Data.DataTable GetSupplierQuotations(int supplierId) {
+            return base.Channel.GetSupplierQuotations(supplierId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetSupplierQuotationsAsync(int supplierId) {
+            return base.Channel.GetSupplierQuotationsAsync(supplierId);
         }
     }
 }
